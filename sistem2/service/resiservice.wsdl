@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://localhost/sistem2/servers/server.php" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" name="ResiService" targetNamespace="http://localhost/sistem2/servers/server.php">
+  <types>
+    <xsd:schema targetNamespace="http://localhost/sistem2/servers/server.php">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+    </xsd:schema>
+  </types>
+  <portType name="ResiServicePort">
+    <operation name="generateResi">
+      <documentation>Generate nomor resi berdasarkan checkout ID.</documentation>
+      <input message="tns:generateResiIn"/>
+      <output message="tns:generateResiOut"/>
+    </operation>
+  </portType>
+  <binding name="ResiServiceBinding" type="tns:ResiServicePort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="generateResi">
+      <soap:operation soapAction="http://localhost/sistem2/servers/server.php#generateResi"/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/sistem2/servers/server.php"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/sistem2/servers/server.php"/>
+      </output>
+    </operation>
+  </binding>
+  <message name="generateResiIn">
+    <part name="checkoutId" type="xsd:int"/>
+  </message>
+  <message name="generateResiOut">
+    <part name="return" type="xsd:string"/>
+  </message>
+  <service name="ResiServiceService">
+    <port name="ResiServicePort" binding="tns:ResiServiceBinding">
+      <soap:address location="http://localhost/sistem2/servers/server.php"/>
+    </port>
+  </service>
+</definitions>

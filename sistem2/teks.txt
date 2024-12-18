@@ -1,0 +1,12 @@
+Yang menggunakan hanya untuk tampilan khusus use case cek status pengiriman dalam sistem logistik adalah
+getTracking.php
+result.php
+api2.php
+
+
+getResi2.php adalah file yang dibuat percobaan untuk memperbaiki getResi.php begitu juga unutk maisn2.js yang dimana file coba coba untuk mengoreksi main.js
+
+
+http://localhost/sistem2/update.php?id=6
+
+digunakan untuk update

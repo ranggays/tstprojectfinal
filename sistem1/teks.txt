@@ -1,0 +1,5 @@
+checkout_revisi adalah hasil revisi dari checkout.php dan dengan middleware saveCheckout.php
+
+
+setelah itu ada saveCheckoutNew adalah file baru dari saveCheckout.php, digunakan untuk mengecek tabel baru revisi dalam
+database dengan tambahan kolom nama dan deskripsi produk
